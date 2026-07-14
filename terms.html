@@ -3,314 +3,256 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Terms and Conditions | Home Reminder Messaging</title>
-
-  <meta
-    name="description"
-    content="Terms and Conditions for the Home Reminder Messaging service."
-  >
-
+  <title>Terms and Conditions | Mike Schreiber Home Reminders</title>
+  <meta name="description" content="Terms and Conditions for Mike Schreiber Home Reminders.">
   <style>
-    :root {
-      color-scheme: light;
-      --background: #f4f7fb;
-      --card: #ffffff;
-      --text: #172033;
-      --muted: #5d687a;
-      --accent: #2374e1;
-      --border: #dce3ec;
-      --notice: #eef5ff;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      background: var(--background);
-      color: var(--text);
-      font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Helvetica,
-        Arial,
-        sans-serif;
-      line-height: 1.65;
-    }
-
-    header {
-      background: #172033;
-      color: #ffffff;
-      padding: 42px 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0 0 8px;
-      font-size: clamp(2rem, 5vw, 3rem);
-      line-height: 1.15;
-    }
-
-    header p {
-      margin: 0;
-      color: #dbe5f2;
-      font-size: 1.05rem;
-    }
-
-    main {
-      width: min(900px, calc(100% - 32px));
-      margin: 32px auto;
-    }
-
-    article {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: clamp(24px, 5vw, 48px);
-      box-shadow: 0 12px 34px rgba(23, 32, 51, 0.08);
-    }
-
-    h2 {
-      margin-top: 2rem;
-      margin-bottom: 0.6rem;
-      font-size: 1.35rem;
-    }
-
-    h2:first-of-type {
-      margin-top: 0;
-    }
-
-    p,
-    li {
-      color: var(--muted);
-    }
-
-    strong {
-      color: var(--text);
-    }
-
-    .effective-date {
-      margin-top: 0;
-      font-size: 0.95rem;
-    }
-
-    .notice {
-      margin: 24px 0;
-      padding: 18px;
-      background: var(--notice);
-      border-left: 4px solid var(--accent);
-      border-radius: 8px;
-    }
-
-    a {
-      color: var(--accent);
-    }
-
-    footer {
-      width: min(900px, calc(100% - 32px));
-      margin: 0 auto 32px;
-      color: var(--muted);
-      text-align: center;
-      font-size: 0.9rem;
-    }
-
-    .footer-links {
-      margin-bottom: 8px;
-    }
-
-    .footer-links a {
-      margin: 0 8px;
-    }
-  </style>
+:root {
+  color-scheme: light;
+  --bg: #f4f7fb;
+  --surface: #ffffff;
+  --text: #172033;
+  --muted: #5f6b7c;
+  --navy: #172033;
+  --blue: #2374e1;
+  --blue-dark: #1858ad;
+  --blue-soft: #eef5ff;
+  --border: #dce3ec;
+  --green: #18794e;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.65;
+}
+a { color: var(--blue); }
+.site-header {
+  background:
+    radial-gradient(circle at top right, rgba(66,133,244,.34), transparent 38%),
+    linear-gradient(135deg, #172033 0%, #1e2c47 58%, #243a63 100%);
+  color: white;
+}
+.nav {
+  width: min(1080px, calc(100% - 32px));
+  margin: auto;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+}
+.brand {
+  color: white;
+  text-decoration: none;
+  font-weight: 750;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+.brand-mark {
+  width: 42px; height: 42px;
+  display: grid; place-items: center;
+  border-radius: 12px;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.2);
+}
+.nav-links { display: flex; flex-wrap: wrap; gap: 18px; }
+.nav-links a { color: #e5edf8; text-decoration: none; font-size: .95rem; }
+.nav-links a:hover { color: white; }
+.hero {
+  width: min(1080px, calc(100% - 32px));
+  margin: auto;
+  padding: 68px 0 80px;
+}
+.hero h1 {
+  margin: 0;
+  max-width: 820px;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  line-height: 1.03;
+  letter-spacing: -.045em;
+}
+.hero p {
+  max-width: 740px;
+  color: #dbe5f2;
+  font-size: clamp(1.04rem, 2vw, 1.2rem);
+}
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 18px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.16);
+  color: #dbe8fa;
+  font-size: .9rem;
+  font-weight: 700;
+}
+main {
+  width: min(960px, calc(100% - 32px));
+  margin: 34px auto 70px;
+}
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: clamp(24px, 5vw, 46px);
+  box-shadow: 0 12px 34px rgba(23,32,51,.08);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.feature {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 8px 24px rgba(23,32,51,.05);
+}
+.feature h3 { margin-top: 0; }
+.feature p, p, li { color: var(--muted); }
+h2 { margin-top: 2rem; line-height: 1.25; }
+h2:first-child { margin-top: 0; }
+.notice {
+  padding: 18px;
+  margin: 22px 0;
+  background: var(--blue-soft);
+  border-left: 4px solid var(--blue);
+  border-radius: 9px;
+}
+.cta-box {
+  padding: clamp(24px, 5vw, 40px);
+  border-radius: 18px;
+  background: var(--navy);
+  color: white;
+}
+.cta-box p { color: #dbe5f2; }
+.keyword {
+  display: inline-block;
+  padding: .12em .5em;
+  border-radius: .45em;
+  background: #dcecff;
+  color: #172033;
+  font-weight: 800;
+  letter-spacing: .03em;
+}
+.phone {
+  font-size: clamp(1.25rem, 4vw, 2rem);
+  font-weight: 800;
+  color: white;
+  overflow-wrap: anywhere;
+}
+.button-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 750;
+}
+.button-primary { background: white; color: var(--navy); }
+.button-secondary { color: white; border: 1px solid rgba(255,255,255,.3); }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 12px 10px; border-bottom: 1px solid var(--border); text-align: left; }
+th { color: var(--text); }
+footer {
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  text-align: center;
+  padding: 28px 16px;
+  font-size: .92rem;
+}
+.footer-links { margin-bottom: 8px; }
+.footer-links a { margin: 0 8px; text-decoration: none; }
+@media (max-width: 760px) {
+  .nav { align-items: flex-start; flex-direction: column; }
+  .grid { grid-template-columns: 1fr; }
+}
+</style>
 </head>
-
 <body>
-  <header>
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html"><span class="brand-mark">🏠</span><span>Mike Schreiber Home Reminders</span></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="sms-signup.html">SMS Signup</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+  </nav>
+  <section class="hero">
+    <span class="eyebrow">Private household reminder service</span>
     <h1>Terms and Conditions</h1>
-    <p>Home Reminder Messaging</p>
-  </header>
+    <p>Messaging consent, frequency, commands, opt-out rights, and program terms.</p>
+  </section>
+</header>
+<main>
+<article class="card">
+  <p><strong>Effective date:</strong> July 14, 2026</p>
 
-  <main>
-    <article>
-      <p class="effective-date">
-        <strong>Effective date:</strong> July 13, 2026
-      </p>
+  <div class="notice">
+    These terms govern participation in the Mike Schreiber Home Reminders SMS program.
+  </div>
 
-      <div class="notice">
-        By agreeing to receive messages from this service, you consent to
-        receive automated household reminder and confirmation text messages.
-      </div>
+  <h2>1. Program description</h2>
+  <p>Mike Schreiber Home Reminders, operated by Mike Schreiber, sends recurring, non-marketing household routine and dental retainer reminders to recipients who independently enroll by texting START to the published Twilio number.</p>
 
-      <h2>1. Service Description</h2>
+  <h2>2. Consent</h2>
+  <p>By texting START, you affirmatively consent to receive recurring automated SMS messages from Mike Schreiber Home Reminders. Consent is voluntary and is not a condition of purchasing any product or service. Consent applies only to this messaging program and is not transferred to another person or organization.</p>
 
-      <p>
-        Home Reminder Messaging is a private household SMS reminder service
-        operated by <strong>Mike Schreiber</strong>.
-      </p>
+  <h2>3. Message frequency</h2>
+  <p>Message frequency varies and may include up to 3 messages per day while a reminder remains unconfirmed. Messages may include enrollment confirmation, routine reminders, follow-up reminders, completion acknowledgments, help responses, and opt-out confirmation.</p>
 
-      <p>
-        The service may send reminders regarding retainers, routines, chores,
-        appointments, household responsibilities, or similar family matters.
-        Recipients may also receive confirmation messages in response to their
-        replies.
-      </p>
+  <h2>4. Message and data rates</h2>
+  <p>Message and data rates may apply according to your wireless plan. You are responsible for charges imposed by your mobile carrier.</p>
 
-      <h2>2. Consent to Receive Messages</h2>
+  <h2>5. Commands</h2>
+  <ul>
+    <li>Text <strong>START</strong> to enroll.</li>
+    <li>Text <strong>DONE</strong> to confirm completion where supported.</li>
+    <li>Text <strong>HELP</strong> for assistance.</li>
+    <li>Text <strong>STOP</strong> to cancel future automated messages.</li>
+  </ul>
 
-      <p>
-        Messages are sent only after the intended recipient, or the
-        recipient's parent or legal guardian where appropriate, has knowingly
-        agreed to participate in the reminder service.
-      </p>
+  <h2>6. Opt-out</h2>
+  <p>You may cancel at any time by replying STOP. After the opt-out is processed, no further automated reminder messages will be sent unless you later enroll again by texting START.</p>
 
-      <p>
-        Consent to receive text messages is voluntary and is not a condition
-        of purchasing any product or service.
-      </p>
+  <h2>7. Help and support</h2>
+  <p>Reply HELP for assistance or email <a href="mailto:mschrib@gmail.com">mschrib@gmail.com</a>.</p>
 
-      <h2>3. Message Frequency</h2>
+  <h2>8. Privacy</h2>
+  <p>Your information is handled according to the <a href="privacy.html">Privacy Policy</a>. <strong>Mobile phone numbers, SMS opt-in data, and messaging consent information are not shared, sold, rented, transferred, or otherwise provided to third parties or affiliates for marketing or promotional purposes.</strong></p>
 
-      <p>
-        Message frequency varies according to the configured reminder
-        schedule, recipient responses, and whether follow-up reminders are
-        needed.
-      </p>
+  <h2>9. Delivery and availability</h2>
+  <p>Delivery depends on mobile carriers, telecommunications networks, Twilio, Home Assistant, internet access, and other technical systems. Messages may be delayed, filtered, duplicated, or undelivered.</p>
 
-      <p>
-        Recipients may generally receive one initial reminder and one or more
-        follow-up messages for an incomplete or unconfirmed task.
-      </p>
+  <h2>10. No emergency use</h2>
+  <p>This program is not an emergency, medical, safety, or security notification service and must not be relied on for urgent communications.</p>
 
-      <h2>4. Message and Data Rates</h2>
+  <h2>11. Appropriate use</h2>
+  <p>This program is used only for lawful, consent-based household reminders. It is not used for advertising, sales, affiliate marketing, lead generation, lending, age-gated content, or third-party promotions.</p>
 
-      <p>
-        Message and data rates may apply according to the recipient's mobile
-        telephone plan. The recipient is responsible for any charges imposed by
-        their wireless carrier.
-      </p>
-
-      <h2>5. Supported Replies</h2>
-
-      <p>
-        Depending on the automation configuration, recipients may respond with
-        commands such as:
-      </p>
-
-      <ul>
-        <li><strong>DONE</strong> to confirm completion.</li>
-        <li><strong>15</strong> to request another reminder later.</li>
-        <li><strong>HELP</strong> to request assistance.</li>
-        <li><strong>STOP</strong> to opt out of future messages.</li>
-      </ul>
-
-      <p>
-        Additional wording such as YES or IN may also be recognized when
-        configured by the service operator.
-      </p>
-
-      <h2>6. Opt-Out Instructions</h2>
-
-      <p>
-        A recipient may stop receiving messages at any time by replying
-        <strong>STOP</strong>.
-      </p>
-
-      <p>
-        After an opt-out request is processed, the service will not send
-        additional automated messages to that number unless the recipient
-        subsequently provides renewed consent.
-      </p>
-
-      <h2>7. Help and Support</h2>
-
-      <p>
-        For assistance, reply <strong>HELP</strong> or contact:
-      </p>
-
-      <p>
-        <strong>Mike Schreiber</strong><br>
-        Email:
-        <a href="mailto:mschrib@gmail.com">mschrib@gmail.com</a>
-      </p>
-
-      <h2>8. Privacy</h2>
-
-      <p>
-        Information collected through this messaging service is governed by
-        the
-        <a href="privacy.html">Privacy Policy</a>.
-      </p>
-
-      <p>
-        Mobile information and messaging consent are not sold or shared with
-        third parties or affiliates for marketing or promotional purposes.
-      </p>
-
-      <h2>9. Availability and Delivery</h2>
-
-      <p>
-        Message delivery is subject to the availability of telecommunications
-        networks, mobile carriers, internet services, Home Assistant,
-        third-party messaging providers, and other technical systems.
-      </p>
-
-      <p>
-        Delivery times are not guaranteed. Messages may occasionally be
-        delayed, filtered, duplicated, or not delivered.
-      </p>
-
-      <h2>10. Appropriate Use</h2>
-
-      <p>
-        This service is intended only for lawful, consent-based household
-        reminders. It may not be used for unsolicited marketing, harassment,
-        illegal activity, emergencies, or time-critical health and safety
-        communications.
-      </p>
-
-      <h2>11. No Emergency Service</h2>
-
-      <p>
-        This messaging service is not an emergency notification system and
-        should not be relied upon for urgent medical, safety, security, or
-        emergency communications.
-      </p>
-
-      <h2>12. Changes to These Terms</h2>
-
-      <p>
-        These Terms and Conditions may be updated when the reminder service,
-        message types, or applicable requirements change. The effective date
-        shown above will be updated when material changes are made.
-      </p>
-
-      <h2>13. Contact</h2>
-
-      <p>
-        Questions concerning these Terms and Conditions may be directed to:
-      </p>
-
-      <p>
-        <strong>Mike Schreiber</strong><br>
-        Email:
-        <a href="mailto:mschrib@gmail.com">mschrib@gmail.com</a>
-      </p>
-    </article>
-  </main>
-
-  <footer>
-    <div class="footer-links">
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms and Conditions</a>
-    </div>
-
-    <div>
-      &copy; 2026 Home Reminder Messaging
-    </div>
-  </footer>
+  <h2>12. Contact</h2>
+  <p>Questions may be directed to Mike Schreiber at <a href="mailto:mschrib@gmail.com">mschrib@gmail.com</a>.</p>
+</article>
+</main>
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="sms-signup.html">SMS Signup</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms and Conditions</a>
+  </div>
+  <div>&copy; 2026 Mike Schreiber Home Reminders</div>
+</footer>
 </body>
 </html>
