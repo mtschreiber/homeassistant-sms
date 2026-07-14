@@ -1,0 +1,69 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Campaign Collateral | Schreiber Home Reminders</title><style>
+:root{
+  --ink:#162033;--muted:#5f6b7c;--blue:#2574e8;--deep:#111a2c;
+  --soft:#eef5ff;--line:#dce4ef;--paper:#fff;--bg:#f5f7fb;--green:#147a55;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.62}
+a{color:var(--blue)}
+.wrap{width:min(1120px,calc(100% - 32px));margin:auto}
+.top{background:
+ radial-gradient(circle at 85% 0%,rgba(71,137,255,.34),transparent 34%),
+ linear-gradient(135deg,#111a2c,#1d3155 70%,#244677);color:#fff}
+nav{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:20px 0}
+.brand{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none;font-weight:800}
+.mark{width:44px;height:44px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.1);border-radius:13px}
+.links{display:flex;gap:20px;flex-wrap:wrap}.links a{color:#e6eefb;text-decoration:none;font-size:.95rem}
+.hero{display:grid;grid-template-columns:1.12fr .88fr;gap:52px;align-items:center;padding:70px 0 84px}
+.eyebrow{display:inline-flex;padding:7px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.09);font-size:.88rem;font-weight:750;color:#dce8fb}
+h1{font-size:clamp(2.8rem,7vw,5.5rem);line-height:1.01;letter-spacing:-.052em;margin:18px 0}
+.lead{font-size:1.13rem;color:#dbe5f3;max-width:720px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;min-height:48px;align-items:center;justify-content:center;padding:0 20px;border-radius:11px;text-decoration:none;font-weight:800}
+.btn.white{background:#fff;color:var(--deep)}.btn.ghost{color:#fff;border:1px solid rgba(255,255,255,.3)}
+.phone-mock{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.19);border-radius:25px;padding:26px;box-shadow:0 28px 70px rgba(0,0,0,.24)}
+.bubble{background:#fff;color:var(--ink);padding:15px 17px;border-radius:18px 18px 18px 5px;margin:11px 0;box-shadow:0 8px 24px rgba(0,0,0,.1)}
+.bubble.reply{background:#dbeaff;margin-left:54px;border-radius:18px 18px 5px 18px}
+main{padding:62px 0 80px}
+.section-head{max-width:760px;margin-bottom:26px}.section-head h2{font-size:clamp(2rem,4vw,3.1rem);letter-spacing:-.03em;line-height:1.15;margin:0 0 10px}.section-head p{color:var(--muted)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:27px;box-shadow:0 10px 30px rgba(22,32,51,.06)}
+.card h2,.card h3{margin-top:0}.card p,.card li{color:var(--muted)}
+.icon{width:48px;height:48px;background:var(--soft);border-radius:13px;display:grid;place-items:center;font-size:1.4rem;margin-bottom:17px}
+.notice{background:var(--soft);border-left:4px solid var(--blue);padding:18px;border-radius:9px;margin:22px 0}
+.dark{background:var(--deep);color:#fff;border-radius:20px;padding:clamp(28px,5vw,48px);box-shadow:0 18px 44px rgba(17,26,44,.18)}
+.dark p,.dark li{color:#dbe5f2}.dark a{color:#a9cdff}
+.codeword{display:inline-block;padding:.12em .48em;border-radius:.45em;background:#dceaff;color:var(--deep);font-weight:900;letter-spacing:.04em}
+.big-number{font-size:clamp(1.5rem,5vw,2.55rem);font-weight:900;overflow-wrap:anywhere;margin:.3em 0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+table{border-collapse:collapse;width:100%}th,td{padding:13px 12px;border-bottom:1px solid var(--line);text-align:left}td{color:var(--muted)}
+.legal h2{margin-top:2rem}.legal h2:first-of-type{margin-top:0}
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);text-align:center;font-size:.92rem}
+.footer-links{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-bottom:8px}
+.review-shell{max-width:980px;margin:24px auto;padding:0 18px}
+.review-title{text-align:center;margin:0 0 16px}.review-title h1{font-size:2.35rem;color:var(--ink);margin:.2em 0}.review-title p{color:var(--muted)}
+.review-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:18px}
+.review-box{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px}
+.review-box h2{margin-top:0}.tiny{font-size:.92rem}.check{list-style:none;padding:0}.check li{padding-left:28px;position:relative;margin:8px 0}.check li:before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:900}
+@media(max-width:850px){.hero,.two,.review-grid{grid-template-columns:1fr}.grid3{grid-template-columns:1fr}.phone-mock{max-width:590px}}
+@media(max-width:620px){nav{align-items:flex-start;flex-direction:column}.actions{flex-direction:column}.btn{width:100%}}
+body{background:#f3f6fb}</style></head><body>
+<div class="review-shell">
+<div class="review-title"><span class="eyebrow" style="background:#eaf2ff;border-color:#cfe0fb;color:#234a7a">Public SMS Campaign Collateral</span><h1>Schreiber Home Reminders</h1><p>Operated by Mike Schreiber</p></div>
+<div class="review-grid">
+<section class="review-box"><h2>How to enroll</h2><p>Text <span class="codeword">START</span> to:</p><p class="big-number" style="color:var(--ink)">+17633092765</p>
+<p>By texting START, the recipient provides affirmative consent to receive recurring automated household routine and dental retainer reminder messages.</p>
+<ul class="check tiny"><li>Message frequency varies</li><li>Up to 3 messages/day while unconfirmed</li><li>Message & data rates may apply</li><li>Reply HELP for help</li><li>Reply STOP to cancel</li><li>Consent is not a condition of purchase</li></ul>
+<p class="tiny"><a href="terms.html">Terms & Conditions</a> · <a href="privacy.html">Privacy Policy</a></p></section>
+<section class="review-box"><h2>Welcome and confirmation flow</h2>
+<p><strong>1. Recipient texts:</strong> START</p>
+<div class="notice tiny"><strong>Automatic welcome message</strong><br>Schreiber Home Reminders: You are now enrolled in recurring household routine and dental retainer reminder messages. Message frequency varies, up to 3 messages per day while a reminder remains unconfirmed. Message and data rates may apply. Reply HELP for help or STOP to cancel.</div>
+<p><strong>2. Example reminder</strong></p>
+<div class="notice tiny">Schreiber Home Reminders: Time for your dental retainer. Reply DONE once it is in. Reply HELP for help or STOP to cancel.</div>
+<p><strong>3. Recipient may reply:</strong> DONE, HELP, or STOP</p></section>
+</div>
+<section class="review-box" style="margin-top:18px"><h2>Mobile privacy statement</h2><p><strong>Mobile phone numbers, SMS opt-in data, and messaging consent information are not shared, sold, rented, transferred, or otherwise provided to third parties or affiliates for marketing or promotional purposes.</strong></p>
+<p class="tiny">Support: mschrib@gmail.com · Public enrollment page: https://mtschreiber.github.io/homeassistant-sms/sms-signup.html</p></section>
+</div></body></html>
