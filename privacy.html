@@ -1,248 +1,124 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy | Mike Schreiber Home Reminders</title>
-  <meta name="description" content="Privacy Policy for Mike Schreiber Home Reminders.">
-  <style>
-:root {
-  color-scheme: light;
-  --bg: #f4f7fb;
-  --surface: #ffffff;
-  --text: #172033;
-  --muted: #5f6b7c;
-  --navy: #172033;
-  --blue: #2374e1;
-  --blue-dark: #1858ad;
-  --blue-soft: #eef5ff;
-  --border: #dce3ec;
-  --green: #18794e;
+	<head>
+		<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width,initial-scale=1">
+				<title>Privacy Policy | Schreiber Home Reminders</title>
+				<meta name="description" content="How mobile information and messaging consent are handled.">
+					<style>
+:root{
+  --ink:#162033;--muted:#5f6b7c;--blue:#2574e8;--deep:#111a2c;
+  --soft:#eef5ff;--line:#dce4ef;--paper:#fff;--bg:#f5f7fb;--green:#147a55;
 }
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  line-height: 1.65;
-}
-a { color: var(--blue); }
-.site-header {
-  background:
-    radial-gradient(circle at top right, rgba(66,133,244,.34), transparent 38%),
-    linear-gradient(135deg, #172033 0%, #1e2c47 58%, #243a63 100%);
-  color: white;
-}
-.nav {
-  width: min(1080px, calc(100% - 32px));
-  margin: auto;
-  padding: 20px 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 22px;
-}
-.brand {
-  color: white;
-  text-decoration: none;
-  font-weight: 750;
-  display: flex;
-  align-items: center;
-  gap: 11px;
-}
-.brand-mark {
-  width: 42px; height: 42px;
-  display: grid; place-items: center;
-  border-radius: 12px;
-  background: rgba(255,255,255,.12);
-  border: 1px solid rgba(255,255,255,.2);
-}
-.nav-links { display: flex; flex-wrap: wrap; gap: 18px; }
-.nav-links a { color: #e5edf8; text-decoration: none; font-size: .95rem; }
-.nav-links a:hover { color: white; }
-.hero {
-  width: min(1080px, calc(100% - 32px));
-  margin: auto;
-  padding: 68px 0 80px;
-}
-.hero h1 {
-  margin: 0;
-  max-width: 820px;
-  font-size: clamp(2.5rem, 7vw, 5rem);
-  line-height: 1.03;
-  letter-spacing: -.045em;
-}
-.hero p {
-  max-width: 740px;
-  color: #dbe5f2;
-  font-size: clamp(1.04rem, 2vw, 1.2rem);
-}
-.eyebrow {
-  display: inline-block;
-  margin-bottom: 18px;
-  padding: 7px 12px;
-  border-radius: 999px;
-  background: rgba(255,255,255,.1);
-  border: 1px solid rgba(255,255,255,.16);
-  color: #dbe8fa;
-  font-size: .9rem;
-  font-weight: 700;
-}
-main {
-  width: min(960px, calc(100% - 32px));
-  margin: 34px auto 70px;
-}
-.card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: clamp(24px, 5vw, 46px);
-  box-shadow: 0 12px 34px rgba(23,32,51,.08);
-}
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-.feature {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 25px;
-  box-shadow: 0 8px 24px rgba(23,32,51,.05);
-}
-.feature h3 { margin-top: 0; }
-.feature p, p, li { color: var(--muted); }
-h2 { margin-top: 2rem; line-height: 1.25; }
-h2:first-child { margin-top: 0; }
-.notice {
-  padding: 18px;
-  margin: 22px 0;
-  background: var(--blue-soft);
-  border-left: 4px solid var(--blue);
-  border-radius: 9px;
-}
-.cta-box {
-  padding: clamp(24px, 5vw, 40px);
-  border-radius: 18px;
-  background: var(--navy);
-  color: white;
-}
-.cta-box p { color: #dbe5f2; }
-.keyword {
-  display: inline-block;
-  padding: .12em .5em;
-  border-radius: .45em;
-  background: #dcecff;
-  color: #172033;
-  font-weight: 800;
-  letter-spacing: .03em;
-}
-.phone {
-  font-size: clamp(1.25rem, 4vw, 2rem);
-  font-weight: 800;
-  color: white;
-  overflow-wrap: anywhere;
-}
-.button-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 48px;
-  padding: 0 20px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 750;
-}
-.button-primary { background: white; color: var(--navy); }
-.button-secondary { color: white; border: 1px solid rgba(255,255,255,.3); }
-.table-wrap { overflow-x: auto; }
-table { width: 100%; border-collapse: collapse; }
-th, td { padding: 12px 10px; border-bottom: 1px solid var(--border); text-align: left; }
-th { color: var(--text); }
-footer {
-  border-top: 1px solid var(--border);
-  color: var(--muted);
-  text-align: center;
-  padding: 28px 16px;
-  font-size: .92rem;
-}
-.footer-links { margin-bottom: 8px; }
-.footer-links a { margin: 0 8px; text-decoration: none; }
-@media (max-width: 760px) {
-  .nav { align-items: flex-start; flex-direction: column; }
-  .grid { grid-template-columns: 1fr; }
-}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.62}
+a{color:var(--blue)}
+.wrap{width:min(1120px,calc(100% - 32px));margin:auto}
+.top{background:
+ radial-gradient(circle at 85% 0%,rgba(71,137,255,.34),transparent 34%),
+ linear-gradient(135deg,#111a2c,#1d3155 70%,#244677);color:#fff}
+nav{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:20px 0}
+.brand{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none;font-weight:800}
+.mark{width:44px;height:44px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.1);border-radius:13px}
+.links{display:flex;gap:20px;flex-wrap:wrap}.links a{color:#e6eefb;text-decoration:none;font-size:.95rem}
+.hero{display:grid;grid-template-columns:1.12fr .88fr;gap:52px;align-items:center;padding:70px 0 84px}
+.eyebrow{display:inline-flex;padding:7px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.09);font-size:.88rem;font-weight:750;color:#dce8fb}
+h1{font-size:clamp(2.8rem,7vw,5.5rem);line-height:1.01;letter-spacing:-.052em;margin:18px 0}
+.lead{font-size:1.13rem;color:#dbe5f3;max-width:720px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;min-height:48px;align-items:center;justify-content:center;padding:0 20px;border-radius:11px;text-decoration:none;font-weight:800}
+.btn.white{background:#fff;color:var(--deep)}.btn.ghost{color:#fff;border:1px solid rgba(255,255,255,.3)}
+.phone-mock{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.19);border-radius:25px;padding:26px;box-shadow:0 28px 70px rgba(0,0,0,.24)}
+.bubble{background:#fff;color:var(--ink);padding:15px 17px;border-radius:18px 18px 18px 5px;margin:11px 0;box-shadow:0 8px 24px rgba(0,0,0,.1)}
+.bubble.reply{background:#dbeaff;margin-left:54px;border-radius:18px 18px 5px 18px}
+main{padding:62px 0 80px}
+.section-head{max-width:760px;margin-bottom:26px}.section-head h2{font-size:clamp(2rem,4vw,3.1rem);letter-spacing:-.03em;line-height:1.15;margin:0 0 10px}.section-head p{color:var(--muted)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:27px;box-shadow:0 10px 30px rgba(22,32,51,.06)}
+.card h2,.card h3{margin-top:0}.card p,.card li{color:var(--muted)}
+.icon{width:48px;height:48px;background:var(--soft);border-radius:13px;display:grid;place-items:center;font-size:1.4rem;margin-bottom:17px}
+.notice{background:var(--soft);border-left:4px solid var(--blue);padding:18px;border-radius:9px;margin:22px 0}
+.dark{background:var(--deep);color:#fff;border-radius:20px;padding:clamp(28px,5vw,48px);box-shadow:0 18px 44px rgba(17,26,44,.18)}
+.dark p,.dark li{color:#dbe5f2}.dark a{color:#a9cdff}
+.codeword{display:inline-block;padding:.12em .48em;border-radius:.45em;background:#dceaff;color:var(--deep);font-weight:900;letter-spacing:.04em}
+.big-number{font-size:clamp(1.5rem,5vw,2.55rem);font-weight:900;overflow-wrap:anywhere;margin:.3em 0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+table{border-collapse:collapse;width:100%}th,td{padding:13px 12px;border-bottom:1px solid var(--line);text-align:left}td{color:var(--muted)}
+.legal h2{margin-top:2rem}.legal h2:first-of-type{margin-top:0}
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);text-align:center;font-size:.92rem}
+.footer-links{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-bottom:8px}
+.review-shell{max-width:980px;margin:24px auto;padding:0 18px}
+.review-title{text-align:center;margin:0 0 16px}.review-title h1{font-size:2.35rem;color:var(--ink);margin:.2em 0}.review-title p{color:var(--muted)}
+.review-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:18px}
+.review-box{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px}
+.review-box h2{margin-top:0}.tiny{font-size:.92rem}.check{list-style:none;padding:0}.check li{padding-left:28px;position:relative;margin:8px 0}.check li:before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:900}
+@media(max-width:850px){.hero,.two,.review-grid{grid-template-columns:1fr}.grid3{grid-template-columns:1fr}.phone-mock{max-width:590px}}
+@media(max-width:620px){nav{align-items:flex-start;flex-direction:column}.actions{flex-direction:column}.btn{width:100%}}
 </style>
-</head>
-<body>
-<header class="site-header">
-  <nav class="nav">
-    <a class="brand" href="index.html"><span class="brand-mark">🏠</span><span>Mike Schreiber Home Reminders</span></a>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="sms-signup.html">SMS Signup</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms</a>
-    </div>
-  </nav>
-  <section class="hero">
-    <span class="eyebrow">Private household reminder service</span>
-    <h1>Privacy Policy</h1>
-    <p>How mobile information and messaging consent are handled.</p>
-  </section>
-</header>
-<main>
-<article class="card">
-  <p><strong>Effective date:</strong> July 14, 2026</p>
-
-  <div class="notice">
-    This policy applies to the Mike Schreiber Home Reminders SMS program operated by Mike Schreiber.
-  </div>
-
-  <h2>1. Messaging program</h2>
-  <p>Mike Schreiber Home Reminders is a private household reminder program. Recipients enroll by texting START to the number displayed on the public <a href="sms-signup.html">SMS Signup page</a>. Messages concern personal household routines, including dental retainer reminders.</p>
-
-  <h2>2. Information collected</h2>
-  <p>The program may process a recipient's mobile telephone number, SMS messages and replies, message timestamps, opt-in or opt-out status, reminder status, and limited delivery or troubleshooting records.</p>
-
-  <h2>3. How information is used</h2>
-  <p>Information is used only to enroll recipients, deliver requested reminders, process replies such as DONE, HELP, START, and STOP, prevent messages after opt-out, maintain limited reminder records, and troubleshoot service operation.</p>
-
-  <h2>4. Mobile information and consent</h2>
-  <p><strong>We do not share, sell, rent, transfer, or otherwise provide mobile phone numbers, SMS opt-in data, or messaging consent information to any third parties, affiliates, lead generators, or marketing organizations for marketing or promotional purposes.</strong></p>
-  <p>We do not use mobile information or messaging consent for advertising, sales, affiliate marketing, lead generation, or third-party promotions.</p>
-
-  <h2>5. Messaging disclosures</h2>
-  <p>Message frequency varies and may include up to 3 messages per day while a reminder remains unconfirmed. Message and data rates may apply. Reply STOP to cancel or HELP for assistance.</p>
-
-  <h2>6. Consent and enrollment</h2>
-  <p>Enrollment is voluntary and occurs only when the recipient affirmatively texts START to the published program number after reviewing the disclosures on the SMS Signup page. No purchased lists, transferred consent, website checkboxes, verbal enrollment, or third-party enrollment methods are used.</p>
-
-  <h2>7. Opting out</h2>
-  <p>Recipients may withdraw consent at any time by replying STOP. No additional automated reminder messages will be sent after the opt-out is processed unless the recipient later enrolls again by texting START.</p>
-
-  <h2>8. Retention and security</h2>
-  <p>Information is retained only as reasonably necessary to operate the reminder program, honor consent and opt-out choices, maintain limited reminder history, and troubleshoot technical issues. Reasonable safeguards are used, but no telecommunications system can be guaranteed completely secure.</p>
-
-  <h2>9. Children and household use</h2>
-  <p>The program is intended for one household and may be used by a parent to offer the service to a child. The recipient must still affirmatively enroll by texting START. The program is not offered to the general public and does not solicit unrelated children.</p>
-
-  <h2>10. Contact</h2>
-  <p>Questions may be directed to Mike Schreiber at <a href="mailto:mschrib@gmail.com">mschrib@gmail.com</a>.</p>
-</article>
-</main>
-<footer>
-  <div class="footer-links">
-    <a href="index.html">Home</a>
-    <a href="sms-signup.html">SMS Signup</a>
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="terms.html">Terms and Conditions</a>
-  </div>
-  <div>&copy; 2026 Mike Schreiber Home Reminders</div>
-</footer>
-</body>
+	</head>
+	<body>
+		<header class="top">
+			<div class="wrap">
+				<nav>
+					<a class="brand" href="index.html">
+						<span class="mark">🏠</span>
+						<span>Schreiber Home Reminders</span>
+					</a>
+					<div class="links">
+						<a href="index.html">Home</a>
+						<a href="sms-signup.html">SMS Enrollment</a>
+						<a href="privacy.html">Privacy</a>
+						<a href="terms.html">Terms</a>
+					</div>
+				</nav>
+				<section class="hero" style="grid-template-columns:1fr;padding-top:54px;padding-bottom:65px">
+					<div>
+						<span class="eyebrow">Operated by Mike Schreiber</span>
+						<h1>Privacy Policy</h1>
+						<p class="lead">How mobile information and messaging consent are handled.</p>
+					</div>
+				</section>
+			</div>
+		</header>
+		<main>
+			<div class="wrap">
+				<article class="card legal">
+					<p>
+						<strong>Effective date:</strong> July 14, 2026</p>
+					<div class="notice">This Privacy Policy applies specifically to the Schreiber Home Reminders SMS program operated by Mike Schreiber.</div>
+					<h2>1. Program scope</h2>
+					<p>Schreiber Home Reminders is a private household reminder program. Recipients enroll only by reviewing the public <a href="sms-signup.html">SMS Enrollment page</a> and affirmatively texting START to the displayed program number.</p>
+					<h2>2. Information processed</h2>
+					<p>The program may process a recipient's mobile number, SMS messages and replies, timestamps, enrollment and opt-out status, reminder completion status, and limited delivery or troubleshooting records.</p>
+					<h2>3. Permitted uses</h2>
+					<p>Information is used only to confirm enrollment, deliver requested reminders, process replies such as START, DONE, HELP, and STOP, prevent messages after opt-out, maintain limited reminder history, and troubleshoot program operation.</p>
+					<h2>4. Mobile information and messaging consent</h2>
+					<p>
+						<strong>Mobile phone numbers, SMS opt-in data, and messaging consent information are not shared, sold, rented, transferred, or otherwise provided to third parties, affiliates, lead generators, or marketing organizations for marketing or promotional purposes.</strong>
+					</p>
+					<p>The program does not use mobile information for advertising, sales, affiliate marketing, lead generation, or third-party promotions.</p>
+					<h2>5. Messaging disclosures</h2>
+					<p>Message frequency varies and may include up to 3 messages per day while a reminder remains unconfirmed. Message and data rates may apply. Reply HELP for assistance or STOP to cancel.</p>
+					<h2>6. Consent</h2>
+					<p>Consent is voluntary and occurs only when the recipient texts START after viewing the disclosed program terms. No verbal, paper, website-form, purchased-list, parent-provided, transferred, or third-party opt-in methods are used.</p>
+					<h2>7. Opt-out</h2>
+					<p>Recipients may withdraw consent at any time by replying STOP. No additional automated reminder messages will be sent after opt-out unless the recipient later enrolls again through the published keyword process.</p>
+					<h2>8. Retention and security</h2>
+					<p>Information is retained only as reasonably necessary to operate the program, honor consent and opt-out choices, maintain limited reminder records, and troubleshoot technical problems. Reasonable safeguards are used, but no communications system can be guaranteed completely secure.</p>
+					<h2>9. Contact</h2>
+					<p>Questions may be directed to Mike Schreiber at <a href="mailto:mschrib@gmail.com">mschrib@gmail.com</a>.</p>
+				</article>
+			</div>
+		</main>
+		<footer>
+			<div class="wrap">
+				<div class="footer-links">
+					<a href="index.html">Home</a>
+					<a href="sms-signup.html">SMS Enrollment</a>
+					<a href="privacy.html">Privacy Policy</a>
+					<a href="terms.html">Terms & Conditions</a>
+				</div>© 2026 Schreiber Home Reminders</div>
+		</footer>
+	</body>
 </html>
