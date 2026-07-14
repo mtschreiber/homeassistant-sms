@@ -2,675 +2,240 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <title>Home Reminder Messaging</title>
-
-  <meta
-    name="description"
-    content="A private household messaging service for automated family reminders and confirmations."
-  >
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Helpful reminders for everyday family routines. | Mike Schreiber Home Reminders</title>
+  <meta name="description" content="Private household routine and retainer reminder messaging.">
   <style>
-    :root {
-      color-scheme: light;
-
-      --background: #f4f7fb;
-      --card: #ffffff;
-      --text: #172033;
-      --muted: #667085;
-      --accent: #2374e1;
-      --accent-dark: #1858ad;
-      --border: #dce3ec;
-      --soft-blue: #eef5ff;
-      --header: #172033;
-      --success: #18794e;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      background: var(--background);
-      color: var(--text);
-      font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Helvetica,
-        Arial,
-        sans-serif;
-      line-height: 1.65;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    .site-header {
-      position: relative;
-      overflow: hidden;
-      background:
-        radial-gradient(
-          circle at top right,
-          rgba(66, 133, 244, 0.35),
-          transparent 38%
-        ),
-        linear-gradient(
-          135deg,
-          #172033 0%,
-          #1e2c47 58%,
-          #243a63 100%
-        );
-      color: #ffffff;
-    }
-
-    .nav {
-      width: min(1100px, calc(100% - 32px));
-      margin: 0 auto;
-      padding: 20px 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 700;
-      text-decoration: none;
-      letter-spacing: 0.01em;
-    }
-
-    .brand-mark {
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      font-size: 1.3rem;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    .nav-links a {
-      color: #e5edf8;
-      text-decoration: none;
-      font-size: 0.95rem;
-    }
-
-    .nav-links a:hover {
-      color: #ffffff;
-    }
-
-    .hero {
-      width: min(1100px, calc(100% - 32px));
-      margin: 0 auto;
-      padding: 72px 0 86px;
-      display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      gap: 52px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 18px;
-      padding: 7px 12px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      color: #dbe8fa;
-      font-size: 0.9rem;
-      font-weight: 600;
-    }
-
-    .hero h1 {
-      margin: 0;
-      max-width: 760px;
-      font-size: clamp(2.7rem, 7vw, 5.2rem);
-      line-height: 1.02;
-      letter-spacing: -0.045em;
-    }
-
-    .hero-copy {
-      margin: 24px 0 0;
-      max-width: 680px;
-      color: #dbe5f2;
-      font-size: clamp(1.05rem, 2vw, 1.22rem);
-    }
-
-    .hero-actions {
-      margin-top: 30px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 0 20px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 700;
-      transition:
-        transform 0.2s ease,
-        background 0.2s ease,
-        border-color 0.2s ease;
-    }
-
-    .button:hover {
-      transform: translateY(-1px);
-    }
-
-    .button-primary {
-      background: #ffffff;
-      color: #172033;
-    }
-
-    .button-secondary {
-      border: 1px solid rgba(255, 255, 255, 0.28);
-      color: #ffffff;
-      background: rgba(255, 255, 255, 0.06);
-    }
-
-    .hero-card {
-      padding: 28px;
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.09);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.2);
-      backdrop-filter: blur(10px);
-    }
-
-    .message-label {
-      margin: 0 0 12px;
-      color: #c9d8ec;
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .message-bubble {
-      margin-bottom: 14px;
-      padding: 16px 18px;
-      border-radius: 18px 18px 18px 5px;
-      background: #ffffff;
-      color: #172033;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-    }
-
-    .message-bubble.reply {
-      margin-left: 42px;
-      border-radius: 18px 18px 5px 18px;
-      background: #dcecff;
-    }
-
-    .message-time {
-      display: block;
-      margin-top: 7px;
-      color: #7b8798;
-      font-size: 0.78rem;
-    }
-
-    main {
-      width: min(1100px, calc(100% - 32px));
-      margin: 0 auto;
-      padding: 68px 0 24px;
-    }
-
-    .section-heading {
-      max-width: 720px;
-      margin-bottom: 30px;
-    }
-
-    .section-heading h2 {
-      margin: 0 0 12px;
-      font-size: clamp(2rem, 4vw, 3rem);
-      line-height: 1.15;
-      letter-spacing: -0.03em;
-    }
-
-    .section-heading p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 1.05rem;
-    }
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .feature-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 26px;
-      box-shadow: 0 10px 30px rgba(23, 32, 51, 0.06);
-    }
-
-    .feature-icon {
-      width: 46px;
-      height: 46px;
-      margin-bottom: 18px;
-      display: grid;
-      place-items: center;
-      border-radius: 12px;
-      background: var(--soft-blue);
-      font-size: 1.35rem;
-    }
-
-    .feature-card h3 {
-      margin: 0 0 8px;
-      font-size: 1.18rem;
-    }
-
-    .feature-card p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .info-panel {
-      margin-top: 56px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
-
-    .panel {
-      padding: 32px;
-      border-radius: 18px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      box-shadow: 0 10px 30px rgba(23, 32, 51, 0.06);
-    }
-
-    .panel-accent {
-      background: var(--soft-blue);
-      border-color: #cfe0f7;
-    }
-
-    .panel h2 {
-      margin-top: 0;
-      margin-bottom: 12px;
-      font-size: 1.6rem;
-    }
-
-    .panel p {
-      color: var(--muted);
-    }
-
-    .clean-list {
-      padding: 0;
-      margin: 20px 0 0;
-      list-style: none;
-    }
-
-    .clean-list li {
-      position: relative;
-      margin: 12px 0;
-      padding-left: 30px;
-      color: var(--muted);
-    }
-
-    .clean-list li::before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 21px;
-      height: 21px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      background: #dff4e8;
-      color: var(--success);
-      font-size: 0.8rem;
-      font-weight: 800;
-    }
-
-    .disclosure {
-      margin-top: 56px;
-      padding: 32px;
-      border-radius: 18px;
-      background: #172033;
-      color: #ffffff;
-    }
-
-    .disclosure h2 {
-      margin-top: 0;
-      margin-bottom: 12px;
-    }
-
-    .disclosure p {
-      margin-bottom: 0;
-      color: #dbe5f2;
-    }
-
-    .legal-links {
-      margin-top: 42px;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .legal-card {
-      display: block;
-      padding: 26px;
-      border-radius: 16px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      text-decoration: none;
-      box-shadow: 0 10px 30px rgba(23, 32, 51, 0.06);
-      transition:
-        transform 0.2s ease,
-        border-color 0.2s ease;
-    }
-
-    .legal-card:hover {
-      transform: translateY(-2px);
-      border-color: #b8cae2;
-    }
-
-    .legal-card h3 {
-      margin: 0 0 6px;
-    }
-
-    .legal-card p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    footer {
-      margin-top: 68px;
-      padding: 30px 16px;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      text-align: center;
-      font-size: 0.92rem;
-    }
-
-    .footer-links {
-      margin-bottom: 10px;
-    }
-
-    .footer-links a {
-      margin: 0 8px;
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    .footer-links a:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 850px) {
-      .hero {
-        grid-template-columns: 1fr;
-        padding-top: 52px;
-      }
-
-      .hero-card {
-        max-width: 560px;
-      }
-
-      .feature-grid,
-      .info-panel {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 620px) {
-      .nav {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .nav-links {
-        gap: 14px;
-      }
-
-      .hero {
-        padding-bottom: 64px;
-      }
-
-      .hero-actions {
-        flex-direction: column;
-      }
-
-      .button {
-        width: 100%;
-      }
-
-      .legal-links {
-        grid-template-columns: 1fr;
-      }
-
-      .panel,
-      .disclosure,
-      .feature-card {
-        padding: 24px;
-      }
-    }
-  </style>
+:root {
+  color-scheme: light;
+  --bg: #f4f7fb;
+  --surface: #ffffff;
+  --text: #172033;
+  --muted: #5f6b7c;
+  --navy: #172033;
+  --blue: #2374e1;
+  --blue-dark: #1858ad;
+  --blue-soft: #eef5ff;
+  --border: #dce3ec;
+  --green: #18794e;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.65;
+}
+a { color: var(--blue); }
+.site-header {
+  background:
+    radial-gradient(circle at top right, rgba(66,133,244,.34), transparent 38%),
+    linear-gradient(135deg, #172033 0%, #1e2c47 58%, #243a63 100%);
+  color: white;
+}
+.nav {
+  width: min(1080px, calc(100% - 32px));
+  margin: auto;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+}
+.brand {
+  color: white;
+  text-decoration: none;
+  font-weight: 750;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+.brand-mark {
+  width: 42px; height: 42px;
+  display: grid; place-items: center;
+  border-radius: 12px;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.2);
+}
+.nav-links { display: flex; flex-wrap: wrap; gap: 18px; }
+.nav-links a { color: #e5edf8; text-decoration: none; font-size: .95rem; }
+.nav-links a:hover { color: white; }
+.hero {
+  width: min(1080px, calc(100% - 32px));
+  margin: auto;
+  padding: 68px 0 80px;
+}
+.hero h1 {
+  margin: 0;
+  max-width: 820px;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  line-height: 1.03;
+  letter-spacing: -.045em;
+}
+.hero p {
+  max-width: 740px;
+  color: #dbe5f2;
+  font-size: clamp(1.04rem, 2vw, 1.2rem);
+}
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 18px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.16);
+  color: #dbe8fa;
+  font-size: .9rem;
+  font-weight: 700;
+}
+main {
+  width: min(960px, calc(100% - 32px));
+  margin: 34px auto 70px;
+}
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: clamp(24px, 5vw, 46px);
+  box-shadow: 0 12px 34px rgba(23,32,51,.08);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.feature {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 8px 24px rgba(23,32,51,.05);
+}
+.feature h3 { margin-top: 0; }
+.feature p, p, li { color: var(--muted); }
+h2 { margin-top: 2rem; line-height: 1.25; }
+h2:first-child { margin-top: 0; }
+.notice {
+  padding: 18px;
+  margin: 22px 0;
+  background: var(--blue-soft);
+  border-left: 4px solid var(--blue);
+  border-radius: 9px;
+}
+.cta-box {
+  padding: clamp(24px, 5vw, 40px);
+  border-radius: 18px;
+  background: var(--navy);
+  color: white;
+}
+.cta-box p { color: #dbe5f2; }
+.keyword {
+  display: inline-block;
+  padding: .12em .5em;
+  border-radius: .45em;
+  background: #dcecff;
+  color: #172033;
+  font-weight: 800;
+  letter-spacing: .03em;
+}
+.phone {
+  font-size: clamp(1.25rem, 4vw, 2rem);
+  font-weight: 800;
+  color: white;
+  overflow-wrap: anywhere;
+}
+.button-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 750;
+}
+.button-primary { background: white; color: var(--navy); }
+.button-secondary { color: white; border: 1px solid rgba(255,255,255,.3); }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 12px 10px; border-bottom: 1px solid var(--border); text-align: left; }
+th { color: var(--text); }
+footer {
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  text-align: center;
+  padding: 28px 16px;
+  font-size: .92rem;
+}
+.footer-links { margin-bottom: 8px; }
+.footer-links a { margin: 0 8px; text-decoration: none; }
+@media (max-width: 760px) {
+  .nav { align-items: flex-start; flex-direction: column; }
+  .grid { grid-template-columns: 1fr; }
+}
+</style>
 </head>
-
 <body>
-  <header class="site-header">
-    <nav class="nav">
-      <a class="brand" href="index.html">
-        <span class="brand-mark">🏠</span>
-        <span>Home Reminder Messaging</span>
-      </a>
-
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#messaging">Messaging</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-      </div>
-    </nav>
-
-    <section class="hero">
-      <div>
-        <div class="eyebrow">
-          Private household reminder service
-        </div>
-
-        <h1>
-          Helpful reminders for everyday family routines.
-        </h1>
-
-        <p class="hero-copy">
-          Home Reminder Messaging is a private, consent-based service that
-          sends automated SMS reminders and processes simple replies from
-          household members.
-        </p>
-
-        <div class="hero-actions">
-          <a class="button button-primary" href="#about">
-            Learn how it works
-          </a>
-
-          <a class="button button-secondary" href="privacy.html">
-            View Privacy Policy
-          </a>
-        </div>
-      </div>
-
-      <div class="hero-card" aria-label="Example reminder conversation">
-        <p class="message-label">Example reminder</p>
-
-        <div class="message-bubble">
-          Time to put in your retainers. Reply DONE when they are in.
-          <span class="message-time">8:30 PM</span>
-        </div>
-
-        <div class="message-bubble reply">
-          DONE
-          <span class="message-time">8:34 PM</span>
-        </div>
-
-        <div class="message-bubble">
-          Great job. Your reminder is complete for tonight.
-          <span class="message-time">8:34 PM</span>
-        </div>
-      </div>
-    </section>
-  </header>
-
-  <main>
-    <section id="about">
-      <div class="section-heading">
-        <h2>Simple, private, and designed for one household</h2>
-
-        <p>
-          The service is used only for personal family reminders. It is not a
-          public messaging platform, marketing service, or advertising system.
-        </p>
-      </div>
-
-      <div class="feature-grid">
-        <article class="feature-card">
-          <div class="feature-icon">⏰</div>
-
-          <h3>Scheduled reminders</h3>
-
-          <p>
-            Messages can be sent at configured times for routines, chores,
-            appointments, and other household responsibilities.
-          </p>
-        </article>
-
-        <article class="feature-card">
-          <div class="feature-icon">💬</div>
-
-          <h3>Simple confirmations</h3>
-
-          <p>
-            Household members can reply with supported commands such as DONE,
-            HELP, STOP, or a request to be reminded later.
-          </p>
-        </article>
-
-        <article class="feature-card">
-          <div class="feature-icon">🔒</div>
-
-          <h3>Consent-based use</h3>
-
-          <p>
-            Messages are sent only to household members who have agreed to
-            receive them. No unsolicited or promotional messages are sent.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section class="info-panel" id="messaging">
-      <article class="panel">
-        <h2>Common reminder uses</h2>
-
-        <p>
-          The system may be used for ordinary family responsibilities,
-          including:
-        </p>
-
-        <ul class="clean-list">
-          <li>Dental retainer reminders</li>
-          <li>Household chores</li>
-          <li>Homework or school routines</li>
-          <li>Appointments and family schedules</li>
-          <li>Bedtime and morning routines</li>
-        </ul>
-      </article>
-
-      <article class="panel panel-accent">
-        <h2>Messaging details</h2>
-
-        <p>
-          Message frequency varies according to the reminder schedule and
-          whether the recipient confirms completion.
-        </p>
-
-        <ul class="clean-list">
-          <li>Message and data rates may apply</li>
-          <li>Reply STOP to opt out</li>
-          <li>Reply HELP for assistance</li>
-          <li>No marketing or promotional content</li>
-          <li>Delivery may depend on carrier availability</li>
-        </ul>
-      </article>
-    </section>
-
-    <section class="disclosure">
-      <h2>Privacy commitment</h2>
-
-      <p>
-        Mobile information, text-messaging opt-in data, and consent are not
-        sold, rented, or shared with third parties or affiliates for marketing
-        or promotional purposes. Information is used only to operate the
-        household reminder service and process recipient replies.
-      </p>
-    </section>
-
-    <section class="legal-links">
-      <a class="legal-card" href="privacy.html">
-        <h3>Privacy Policy →</h3>
-
-        <p>
-          Learn what limited information is processed and how it is protected.
-        </p>
-      </a>
-
-      <a class="legal-card" href="terms.html">
-        <h3>Terms and Conditions →</h3>
-
-        <p>
-          Review messaging consent, frequency, opt-out instructions, and
-          service terms.
-        </p>
-      </a>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-links">
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html"><span class="brand-mark">🏠</span><span>Mike Schreiber Home Reminders</span></a>
+    <div class="nav-links">
       <a href="index.html">Home</a>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms and Conditions</a>
+      <a href="sms-signup.html">SMS Signup</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
     </div>
+  </nav>
+  <section class="hero">
+    <span class="eyebrow">Private household reminder service</span>
+    <h1>Helpful reminders for everyday family routines.</h1>
+    <p>A private, consent-based SMS program operated by Mike Schreiber for members of one household.</p>
+  </section>
+</header>
+<main>
+<section class="grid">
+  <article class="feature">
+    <h3>⏰ Household reminders</h3>
+    <p>Automated reminders for personal family routines such as wearing dental retainers and completing household responsibilities.</p>
+  </article>
+  <article class="feature">
+    <h3>💬 Simple replies</h3>
+    <p>Enrolled recipients can reply DONE to confirm completion, HELP for assistance, or STOP to cancel future messages.</p>
+  </article>
+  <article class="feature">
+    <h3>🔒 Consent based</h3>
+    <p>Messages are sent only after the recipient independently enrolls by texting START to the published Twilio number.</p>
+  </article>
+</section>
 
-    <div>
-      &copy; 2026 Home Reminder Messaging
-    </div>
-  </footer>
+<section class="cta-box" style="margin-top:28px;">
+  <h2>SMS enrollment</h2>
+  <p>Review the full messaging disclosures and enrollment instructions before joining.</p>
+  <div class="button-row">
+    <a class="button button-primary" href="sms-signup.html">View SMS signup</a>
+    <a class="button button-secondary" href="privacy.html">Privacy Policy</a>
+    <a class="button button-secondary" href="terms.html">Terms</a>
+  </div>
+</section>
+
+<section class="card" style="margin-top:28px;">
+  <h2>About this program</h2>
+  <p>Mike Schreiber Home Reminders is operated by Mike Schreiber for members of one household. It is not a public marketing platform, lead-generation service, or advertising program.</p>
+  <p>Typical messages concern retainers and ordinary household routines. Follow-up reminders may be sent while a reminder remains unconfirmed.</p>
+  <div class="notice"><strong>Privacy commitment:</strong> We do not share, sell, rent, or otherwise provide mobile phone numbers, SMS opt-in data, or messaging consent information to third parties or affiliates for marketing or promotional purposes.</div>
+</section>
+</main>
+<footer>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="sms-signup.html">SMS Signup</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms and Conditions</a>
+  </div>
+  <div>&copy; 2026 Mike Schreiber Home Reminders</div>
+</footer>
 </body>
 </html>
